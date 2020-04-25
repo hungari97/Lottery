@@ -1,8 +1,12 @@
 package hu.lottery.presenter
 
+import hu.lottery.model.interactor.DatabaseInteractor
+import hu.lottery.model.interactor.WinnerNumberInteractor
 import hu.lottery.screen.FiveScoreScreen
+import java.util.concurrent.Executor
+import javax.inject.Inject
 
-object FiveScorePresenter: Presenter<FiveScoreScreen>() {
+class FiveScorePresenter @Inject constructor(private val executor: Executor, private val databaseInteractor: DatabaseInteractor, private val winnerNumberInteractor: WinnerNumberInteractor): Presenter<FiveScoreScreen>() {
     override fun attachScreen(screen: FiveScoreScreen) {
         super.attachScreen(screen)
     }

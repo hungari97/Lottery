@@ -1,6 +1,6 @@
 package hu.lottery.model.interactor
 
-class DatebaseInteractor {
+class DatabaseInteractor {
 
     fun authenticateUser(){}
 

@@ -1,8 +1,12 @@
 package hu.lottery.presenter
 
+import hu.lottery.model.interactor.DatabaseInteractor
 import hu.lottery.screen.SixScreen
+import javax.inject.Inject
 
-object SixPresenter : Presenter<SixScreen>() {
+class SixPresenter @Inject constructor(private val databaseInteractor: DatabaseInteractor): Presenter<SixScreen>() {
+
+
     override fun attachScreen(screen: SixScreen) {
         super.attachScreen(screen)
     }

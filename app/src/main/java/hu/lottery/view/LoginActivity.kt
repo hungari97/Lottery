@@ -24,15 +24,21 @@ import android.widget.TextView
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
 import hu.lottery.R
+import hu.lottery.injector
 import hu.lottery.presenter.LoginPresenter
 import hu.lottery.screen.LoginScreen
 
 import kotlinx.android.synthetic.main.activity_login.*
+import javax.inject.Inject
 
 /**
  * A login screen that offers login via email/password.
  */
 class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor>,LoginScreen {
+
+    @Inject
+    lateinit var loginPresenter: LoginPresenter
+
     override fun navigateToMenu() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -43,12 +49,12 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor>,LoginScreen {
 
     override fun onStart() {
         super.onStart()
-        LoginPresenter.attachScreen(this)
+        loginPresenter.attachScreen(this)
     }
 
     override fun onStop() {
         super.onStop()
-        LoginPresenter.detachScreen()
+        loginPresenter.detachScreen()
     }
 
 
@@ -59,7 +65,9 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor>,LoginScreen {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        injector.inject(this)
         setContentView(R.layout.activity_login)
+
         // Set up the login form.
         populateAutoComplete()
         password.setOnEditorActionListener(TextView.OnEditorActionListener { _, id, _ ->
