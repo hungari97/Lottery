@@ -1,7 +1,8 @@
 package hu.lottery.view
 
-import android.support.v7.app.AppCompatActivity
+
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import hu.lottery.R
 import hu.lottery.injector
 import hu.lottery.presenter.SixPresenter

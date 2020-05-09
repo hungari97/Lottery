@@ -2,13 +2,14 @@ package hu.lottery.network
 
 import dagger.Module
 import dagger.Provides
-import hu.lottery.network.client.apis.LotteryApi
-import hu.lottery.network.client.apis.TokenApi
-import hu.lottery.network.client.apis.WinnerApi
+import hu.lottery.network.client.api.LotteryApi
+import hu.lottery.network.client.api.TokenApi
+import hu.lottery.network.client.api.WinnerApi
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import javax.inject.Singleton
+
+import okhttp3.logging.HttpLoggingInterceptor
 
 @Module
 class NetworkModule {

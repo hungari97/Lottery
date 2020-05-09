@@ -1,10 +1,8 @@
 package hu.lottery
 
 import dagger.Component
-import hu.lottery.model.interactor.DatabaseInteractor
 import hu.lottery.model.interactor.InteractorModule
-import hu.lottery.model.interactor.WinnerNumberInteractor
-import hu.lottery.network.client.NetworkModule
+import hu.lottery.network.NetworkModule
 import hu.lottery.view.*
 import javax.inject.Singleton
 
