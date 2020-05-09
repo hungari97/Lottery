@@ -28,6 +28,11 @@ android {
     }
 }
 
+configurations {
+    all {
+        exclude group: 'org.json', module: 'json'
+    }
+}
 
 ext {
     okhttp_version = "3.0.1"
