@@ -86,5 +86,5 @@ dependencies {
     implementation "org.apache.oltu.oauth2:org.apache.oltu.oauth2.client:$oltu_version"
 
     testImplementation "junit:junit:$junit_version"
-
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0"
 }

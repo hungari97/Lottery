@@ -10,8 +10,8 @@ import retrofit2.http.Path
 
 interface LotteryApi {
     /**
-     * Finds Pets by status
-     * Multiple status values can be provided with comma separated strings
+     * Get the five tickets
+     *
      * @param token Authentication number
      * @return Call<List></List><FiveTicket>>
     </FiveTicket> */
@@ -21,10 +21,10 @@ interface LotteryApi {
     ): Call<List<FiveTicket?>?>?
 
     /**
-     * Add a new pet to the store
+     * Add a new five ticket
      *
      * @param token Authentication number
-     * @param body Pet object that needs to be added to the store
+     * @param body five ticket that needs to be added
      * @return Call<Void>
     </Void> */
     @POST("FiveLottery,{token}")
@@ -33,8 +33,8 @@ interface LotteryApi {
     ): Call<Void?>?
 
     /**
-     * Finds Pets by status
-     * Multiple status values can be provided with comma separated strings
+     * Get the six tickets
+     *
      * @param token Authentication number
      * @return Call<List></List><SixTicket>>
     </SixTicket> */
@@ -44,10 +44,10 @@ interface LotteryApi {
     ): Call<List<SixTicket?>?>?
 
     /**
-     * Add a new pet to the store
+     * Add a new six ticket
      *
      * @param token Authentication number
-     * @param body Pet object that needs to be added to the store
+     * @param body six ticket that needs to be added
      * @return Call<Void>
     </Void> */
     @POST("SixLottery")

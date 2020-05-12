@@ -16,5 +16,5 @@ interface TokenApi {
     fun getToken(
         @Path("name") name: String?,
         @Path("password") password: String?
-    ): Call<String?>?
+    ): Call<String>
 }

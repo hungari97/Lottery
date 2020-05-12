@@ -1,5 +1,7 @@
 package hu.lottery.network.client.api
 
+import hu.lottery.model.FiveTicket
+import hu.lottery.model.SixTicket
 import retrofit2.Call
 import retrofit2.http.GET
 
@@ -10,7 +12,7 @@ interface WinnerApi {
      * @return Call<List></List><FiveTicket>>
     </FiveTicket> */
     @get:GET("FiveLottery")
-    val winnerFive: Call<List<Any?>?>?
+    val winnerFive:Call<FiveTicket>
 
     /**
      * Finds Pets by status
@@ -18,5 +20,5 @@ interface WinnerApi {
      * @return Call<List></List><SixTicket>>
     </SixTicket> */
     @get:GET("SixLotter")
-    val winnerSix: Call<List<Any?>?>?
+    val winnerSix: Call<SixTicket>
 }
