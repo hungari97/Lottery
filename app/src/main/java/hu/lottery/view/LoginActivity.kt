@@ -70,7 +70,7 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor>,LoginScreen {
 
         // Set up the login form.
         populateAutoComplete()
-        password.setOnEditorActionListener(TextView.OnEditorActionListener { _, id, _ ->
+        etPassword.setOnEditorActionListener(TextView.OnEditorActionListener { _, id, _ ->
             if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
                 attemptLogin()
                 return@OnEditorActionListener true
@@ -78,7 +78,7 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor>,LoginScreen {
             false
         })
 
-        email_sign_in_button.setOnClickListener { attemptLogin() }
+        btLogin.setOnClickListener { attemptLogin() }
     }
 
     private fun populateAutoComplete() {
@@ -133,19 +133,19 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor>,LoginScreen {
 
         // Reset errors.
         email.error = null
-        password.error = null
+        etPassword.error = null
 
         // Store values at the time of the login attempt.
         val emailStr = email.text.toString()
-        val passwordStr = password.text.toString()
+        val passwordStr = etPassword.text.toString()
 
         var cancel = false
         var focusView: View? = null
 
         // Check for a valid password, if the user entered one.
         if (!TextUtils.isEmpty(passwordStr) && !isPasswordValid(passwordStr)) {
-            password.error = getString(R.string.error_invalid_password)
-            focusView = password
+            etPassword.error = getString(R.string.error_invalid_password)
+            focusView = etPassword
             cancel = true
         }
 
@@ -310,8 +310,8 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor>,LoginScreen {
             if (success!!) {
                 finish()
             } else {
-                password.error = getString(R.string.error_incorrect_password)
-                password.requestFocus()
+                etPassword.error = getString(R.string.error_incorrect_password)
+                etPassword.requestFocus()
             }
         }
 

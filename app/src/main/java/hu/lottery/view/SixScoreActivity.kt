@@ -1,11 +1,13 @@
 package hu.lottery.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import hu.lottery.R
 import hu.lottery.injector
 import hu.lottery.presenter.SixScorePresenter
 import hu.lottery.screen.SixScoreScreen
+import kotlinx.android.synthetic.main.activity_six_score.*
 import javax.inject.Inject
 
 class SixScoreActivity : AppCompatActivity(),SixScoreScreen {
@@ -26,8 +28,8 @@ class SixScoreActivity : AppCompatActivity(),SixScoreScreen {
         injector.inject(this)
         setContentView(R.layout.activity_six_score)
 
+        ibLastSixback.setOnClickListener { startActivity(Intent(this, SixActivity::class.java)) }
 
-        //TODO vissza gomb becsatolása
     }
 
     override fun onStart() {

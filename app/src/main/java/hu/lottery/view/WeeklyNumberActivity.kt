@@ -1,11 +1,13 @@
 package hu.lottery.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import hu.lottery.R
 import hu.lottery.injector
 import hu.lottery.presenter.WeeklyPresenter
 import hu.lottery.screen.WeeklyScreen
+import kotlinx.android.synthetic.main.activity_weekly_number.*
 import javax.inject.Inject
 
 class WeeklyNumberActivity : AppCompatActivity(),WeeklyScreen {
@@ -33,6 +35,7 @@ class WeeklyNumberActivity : AppCompatActivity(),WeeklyScreen {
         injector.inject(this)
         setContentView(R.layout.activity_weekly_number)
 
+        ibWeeklyback.setOnClickListener { startActivity(Intent(this,MenuActivity::class.java)) }
 
         //TODO vissza gomb becsatolása
     }

@@ -2,4 +2,8 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="title_text_size">24sp</dimen>
+    <dimen name="number_chooser_size">16sp</dimen>
+    <dimen name="six_five_lotterytitle_size">24sp</dimen>
+    <dimen name="choosen_number_title_size">32sp</dimen>
 </resources>

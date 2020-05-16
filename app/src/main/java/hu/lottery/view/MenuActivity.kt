@@ -1,11 +1,13 @@
 package hu.lottery.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import hu.lottery.R
 import hu.lottery.injector
 import hu.lottery.presenter.MenuPresenter
 import hu.lottery.screen.MenuScreen
+import kotlinx.android.synthetic.main.activity_menu.*
 import javax.inject.Inject
 
 class MenuActivity : AppCompatActivity(), MenuScreen {
@@ -16,6 +18,9 @@ class MenuActivity : AppCompatActivity(), MenuScreen {
         setContentView(R.layout.activity_menu)
 
 
+        btFiveLottery.setOnClickListener { startActivity(Intent(this, FiveActivity::class.java)) }
+        btSixLottery.setOnClickListener { startActivity(Intent(this, SixActivity::class.java)) }
+        btWeeklyTickets.setOnClickListener { startActivity(Intent(this,WeeklyNumberActivity::class.java)) }
         //TODO ötös, hatos és eheti gomb bekötése
     }
 

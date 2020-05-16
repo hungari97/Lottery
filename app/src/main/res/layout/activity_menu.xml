@@ -1,19 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.MenuActivity">
 
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbMenuLottery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
+        android:id="@+id/tvMenuTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lottózó"
+            android:textSize="@dimen/title_text_size"
+            android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="@id/tbMenuLottery"
+        app:layout_constraintEnd_toEndOf="@+id/tbMenuLottery"
+        app:layout_constraintStart_toStartOf="@id/tbMenuLottery"
+        app:layout_constraintTop_toTopOf="@+id/tbMenuLottery" />
+
+    <Button
+            android:id="@+id/btWeeklyTickets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
+            android:text="Eheti feladott szelvények"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btSixLottery"
+            app:layout_constraintVertical_bias="0.576" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+            android:id="@+id/btFiveLottery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Ötöslottó"
+            app:layout_constraintBottom_toTopOf="@+id/btSixLottery"
+            app:layout_constraintEnd_toEndOf="@+id/btWeeklyTickets"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btWeeklyTickets"
+            app:layout_constraintTop_toBottomOf="@+id/tbMenuLottery"
+            app:layout_constraintVertical_bias="0.783" />
+
+    <Button
+            android:id="@+id/btSixLottery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Hatoslottó"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btWeeklyTickets"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btWeeklyTickets"
+            app:layout_constraintTop_toBottomOf="@+id/tbMenuLottery"
+            app:layout_constraintVertical_bias="0.384" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

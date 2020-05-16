@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,4 +7,166 @@
         android:layout_height="match_parent"
         tools:context=".view.FiveScoreActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbLastFive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+            android:id="@+id/ibLastFiveback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbLastFive"
+            app:layout_constraintStart_toStartOf="@+id/tbLastFive"
+            app:layout_constraintTop_toTopOf="@+id/tbLastFive"
+            app:srcCompat="@drawable/abc_vector_test" />
+
+    <TextView
+            android:id="@+id/tvLastFiveLotteryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lottózó"
+            app:layout_constraintBottom_toBottomOf="@+id/tbLastFive"
+            app:layout_constraintEnd_toEndOf="@+id/tbLastFive"
+            app:layout_constraintStart_toStartOf="@+id/tbLastFive"
+            app:layout_constraintTop_toTopOf="@+id/tbLastFive" />
+
+    <TextView
+            android:id="@+id/tvChosennumb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kihúzott számok"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tbLastFive"
+            android:textSize="@dimen/choosen_number_title_size"
+            android:layout_marginTop="16dp"/>
+
+    <TextView
+            android:id="@+id/tvLastFiveTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ötöslottó"
+            android:textSize="@dimen/six_five_lotterytitle_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvChosennumb"
+            android:layout_marginTop="8dp"/>
+
+    <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/number_style"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLastFiveTitle">
+
+        <TextView
+                android:id="@+id/tvWinnerNumb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginEnd="32sp"
+                android:layout_marginBottom="8sp"
+                android:layout_weight="1"
+                android:background="@drawable/full_rounded_style"
+                android:paddingLeft="2sp"
+                android:paddingRight="2sp"
+                android:text="32"
+                android:textSize="24sp" />
+
+        <TextView
+                android:id="@+id/tvWinnerNumb2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:layout_marginEnd="32sp"
+                android:layout_marginBottom="8sp"
+                android:layout_weight="1"
+                android:background="@drawable/full_rounded_style"
+                android:paddingLeft="2sp"
+                android:paddingRight="2sp"
+                android:text="32"
+                android:textSize="24sp" />
+
+        <TextView
+                android:id="@+id/tvWinnerNumb3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:layout_marginEnd="32sp"
+                android:layout_marginBottom="8sp"
+                android:layout_weight="1"
+                android:background="@drawable/full_rounded_style"
+                android:paddingLeft="2sp"
+                android:paddingRight="2sp"
+                android:text="32"
+                android:textSize="24sp" />
+
+        <TextView
+                android:id="@+id/tvWinnerNumb4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:layout_marginEnd="32sp"
+                android:layout_marginBottom="8sp"
+                android:layout_weight="1"
+                android:background="@drawable/full_rounded_style"
+                android:paddingLeft="2sp"
+                android:paddingRight="2sp"
+                android:text="32"
+                android:textSize="24sp" />
+
+        <TextView
+                android:id="@+id/tvWinnerNumb5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:layout_marginEnd="24sp"
+                android:layout_marginBottom="8sp"
+                android:layout_weight="1"
+                android:background="@drawable/full_rounded_style"
+                android:paddingLeft="2sp"
+                android:paddingRight="2sp"
+                android:text="32"
+                android:textSize="24sp" />
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/tvSentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feladott Számok"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/number_style"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSentTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
