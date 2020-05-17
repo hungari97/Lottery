@@ -9,26 +9,29 @@
 
     <application
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@mipmap/clover"
             android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
+            android:roundIcon="@mipmap/clover"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
-            android:name=".LotteryApplication">
+            android:name=".LotteryApplication"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         <activity android:name=".view.MenuActivity">
+        </activity>
+        <activity android:name=".view.FiveActivity">
+        </activity>
+        <activity android:name=".view.SixActivity">
+
+        </activity>
+        <activity
+                android:name=".view.LoginActivity"
+                android:label="@string/title_activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".view.FiveActivity">
-        </activity>
-        <activity android:name=".view.SixActivity">
-        </activity>
-        <activity
-                android:name=".view.LoginActivity"
-                android:label="@string/title_activity_login">
         </activity>
         <activity android:name=".view.WeeklyNumberActivity">
         </activity>
