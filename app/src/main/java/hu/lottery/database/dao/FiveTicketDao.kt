@@ -14,9 +14,9 @@ interface FiveTicketDao {
         @Query("SELECT first,second,third,fourth,fifth FROM fiveTickets")
         fun getFiveWinner(): List<Int>
         @Query("SELECT * FROM fiveTickets")
-        fun getFiveTicket(): FiveTicketEntity
+        fun getAllFiveTicket(): List<FiveTicketEntity>
         @Insert
-        fun insertFiveTicket(vararg fiveTicket: FiveTicketEntity)
+        fun insertFiveTicket(vararg fiveTicket: FiveTicketEntity):Long
         @Delete
         fun deleteFiveTicket(fiveTicket: FiveTicketEntity)
     }

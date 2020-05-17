@@ -1,6 +1,16 @@
 package hu.lottery.model.interactor
 
-class WinnerNumberInteractor {
+import hu.lottery.model.FiveTicket
+import hu.lottery.network.client.api.WinnerApi
+import javax.inject.Inject
 
-    fun getWinnerNumber(){}
+class WinnerNumberInteractor @Inject constructor(
+    private val winnerApi: WinnerApi
+) {
+
+
+
+    fun getWinnerFiveNumber():List<FiveTicket>{
+        winnerApi.winnerFive.
+    }
 }

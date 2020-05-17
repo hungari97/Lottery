@@ -5,6 +5,8 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import hu.lottery.R
 import hu.lottery.injector
@@ -12,6 +14,7 @@ import hu.lottery.presenter.SixPresenter
 import hu.lottery.screen.SixScreen
 import kotlinx.android.synthetic.main.activity_six.*
 import kotlinx.android.synthetic.main.activity_six_score.*
+import java.lang.StringBuilder
 import java.util.ArrayList
 import javax.inject.Inject
 
@@ -21,12 +24,27 @@ class SixActivity : AppCompatActivity(), SixScreen {
     lateinit var sixPresenter: SixPresenter
     var newTicket = ArrayList<Int>()
 
+    fun onClick(v: Button) {
+
+        if (v.background == getResources().getDrawable(R.drawable.number_style)) {
+            if (newTicket.size > 5) {
+                v.setBackground(getResources().getDrawable(R.drawable.choosen_number_style))
+                newTicket.add(v.text.toString().toInt())
+            }
+        } else {
+            v.setBackground(getResources().getDrawable(R.drawable.number_style))
+            newTicket.remove(newTicket.indexOf(v.text.toString().toInt()))
+        }
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         injector.inject(this)
         setContentView(R.layout.activity_six)
 
         ibLastSixback.setOnClickListener { startActivity(Intent(this, MenuActivity::class.java)) }
+
         btToLastSixTickets.setOnClickListener {
             startActivity(
                 Intent(
@@ -35,21 +53,15 @@ class SixActivity : AppCompatActivity(), SixScreen {
                 )
             )
         }
+
         btSendSixTicket.setOnClickListener {
             sixPresenter.addNewTicket(newTicket)
             startActivity(Intent(this, MenuActivity::class.java))
         }
 
-
-
+        btSix1.setOnClickListener { onClick(btSix1) }
         btSix1.setOnClickListener {
-            if (btSix1.background == getResources().getDrawable(R.drawable.number_style)) {
-                btSix1.setBackground(getResources().getDrawable(R.drawable.choosen_number_style))
-                newTicket.add(1)
-            } else {
-                btSix1.setBackground(getResources().getDrawable(R.drawable.number_style))
-                newTicket.remove(newTicket.indexOf(1))
-            }
+
         }
         btSix2.setOnClickListener {
             if (btSix2.background == getResources().getDrawable(R.drawable.number_style)) {
@@ -764,9 +776,6 @@ class SixActivity : AppCompatActivity(), SixScreen {
         }
 
     }
-
-
-    fun onClick(){}
 
     override fun onStart() {
         super.onStart()
