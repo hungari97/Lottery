@@ -1,12 +1,49 @@
 package hu.lottery.model.interactor
 
-class DatabaseInteractor {
+import hu.lottery.model.FiveTicket
+import hu.lottery.model.SixTicket
+import hu.lottery.network.client.api.LotteryApi
+import hu.lottery.network.client.api.TokenApi
+import javax.inject.Inject
 
-    fun authenticateUser(){}
+class DatabaseInteractor @Inject constructor(
+    private val lotteryApi: LotteryApi,
+    private val tokenApi: TokenApi
+) {
+    lateinit var token:String
+    fun authenticateUser(name : String, password: String){
+        val call = tokenApi.getToken(name,password)
+        val response = call.execute()
+        token = response.body()
+    }
 
-    fun listFiveTickets(){}
+    fun listFiveTickets(): List<FiveTicket> {
+        val call = lotteryApi.getLastFive(token)
+        val response = call?.execute() ?: throw Error("No call was returned")
+        return response.body()
+            ?.filterNotNull()
+            ?.map { it as FiveTicket }
+            ?: throw Error("No data in responses")
+    }
 
-    fun listSixTickets(){}
+    fun listSixTickets(): List<SixTicket> {
+        val call = lotteryApi.getLastSix(token)
+        val response = call?.execute() ?: throw Error("No call was returned")
+        return response.body()
+            ?.filterNotNull()
+            ?.map { it as SixTicket }
+            ?: throw Error("No data in responses")
+    }
 
-    fun addNewTickets(){}
+    fun addNewSixTickets(tickets:List<SixTicket>){
+        tickets.forEach {
+            lotteryApi.postSix(token,it)
+        }
+    }
+
+    fun addNewFiveTickets(tickets:List<FiveTicket>){
+        tickets.forEach {
+            lotteryApi.postFive(token,it)
+        }
+    }
 }

@@ -22,11 +22,11 @@ class UIModule(private val context: Context) {
 
     @Provides
     @Singleton
-    fun sixScorePresenter(executor: Executor, databaseInteractor: DatabaseInteractor, winnerNumberInteractor: WinnerNumberInteractor) = SixScorePresenter(executor, databaseInteractor,winnerNumberInteractor)
+    fun sixScorePresenter(databaseInteractor: DatabaseInteractor, winnerNumberInteractor: WinnerNumberInteractor) = SixScorePresenter(databaseInteractor,winnerNumberInteractor)
 
     @Provides
     @Singleton
-    fun fiveScorePresenter(executor: Executor, databaseInteractor: DatabaseInteractor, winnerNumberInteractor: WinnerNumberInteractor) = FiveScorePresenter(executor, databaseInteractor,winnerNumberInteractor)
+    fun fiveScorePresenter(databaseInteractor: DatabaseInteractor, winnerNumberInteractor: WinnerNumberInteractor) = FiveScorePresenter(databaseInteractor,winnerNumberInteractor)
 
     @Provides
     @Singleton
