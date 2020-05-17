@@ -10,6 +10,7 @@ import retrofit2.Retrofit
 import javax.inject.Singleton
 
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.GsonConverterFactory
 
 @Module
 class NetworkModule {
@@ -39,8 +40,8 @@ class NetworkModule {
     fun provideLotteryApi(client: OkHttpClient): LotteryApi {
         val retrofit = Retrofit.Builder()
             .client(client)
-          //  .baseUrl(NetworkConfig.API_ENDPOINT_ADDRESS)
-          //  .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl("lottery.data.io")
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
         return retrofit.create(LotteryApi::class.java)
     }
@@ -51,8 +52,8 @@ class NetworkModule {
     fun provideWinnerApi(client: OkHttpClient): WinnerApi {
         val retrofit = Retrofit.Builder()
             .client(client)
-            //.baseUrl(NetworkConfig.API_ENDPOINT_ADDRESS)
-           // .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl("lottery.win.io")
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
         return retrofit.create(WinnerApi::class.java)
     }

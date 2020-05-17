@@ -5,6 +5,7 @@ import dagger.Module
 import dagger.Provides
 import hu.lottery.network.client.api.LotteryApi
 import hu.lottery.network.client.api.WinnerApi
+import hu.lottery.network.mock.MockWinnerApi
 import javax.inject.Singleton
 
 @Module
@@ -16,5 +17,6 @@ class MockNetworkModule {
 
     @Provides
     @Singleton
-    fun provideWinnerApi(provideContext: Context): WinnerApi = MockWinnerApi(provideContext)
+    fun provideWinnerApi(provideContext: Context): WinnerApi =
+        MockWinnerApi(provideContext)
 }

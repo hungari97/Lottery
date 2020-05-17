@@ -3,11 +3,12 @@ package hu.lottery
 import dagger.Component
 import hu.lottery.model.interactor.InteractorModule
 import hu.lottery.network.NetworkModule
+import hu.lottery.network.mock.MockNetworkModule
 import hu.lottery.view.*
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [UIModule::class, InteractorModule::class, NetworkModule::class])
+@Component(modules = [UIModule::class, InteractorModule::class, MockNetworkModule::class])
 interface LotteryApplicationComponent {
     fun inject(menuActivity: MenuActivity)
     fun inject(sixActivity: SixActivity)
