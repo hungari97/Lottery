@@ -9,10 +9,11 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.ArgumentCaptor
 import org.mockito.Mockito
+import org.robolectric.RobolectricTestRunner
 import javax.inject.Inject
 
 
-@RunWith()
+@RunWith(RobolectricTestRunner::class)
 class FiveLastTest {
 
     @Inject
@@ -32,6 +33,7 @@ class FiveLastTest {
     @Test
     fun testScore() {
 
+        fiveScoreScreen.showWinnerNumbers()
 
     }
 
