@@ -18,5 +18,9 @@ class LoginPresenter @Inject constructor(private val databaseInteractor: Databas
         databaseInteractor.authenticateUser(name,password)
     }
 
-    //fun register() {}
+    fun validate(username:String,password: String):Boolean {
+
+        return databaseInteractor.authenticateUser(username,password)
+
+    }
 }

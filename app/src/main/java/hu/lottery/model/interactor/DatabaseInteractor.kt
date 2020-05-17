@@ -11,10 +11,11 @@ class DatabaseInteractor @Inject constructor(
     private val tokenApi: TokenApi
 ) {
     lateinit var token:String
-    fun authenticateUser(name : String, password: String){
+    fun authenticateUser(name : String, password: String):Boolean{
         val call = tokenApi.getToken(name,password)
         val response = call.execute()
         token = response.body()
+        return token.compareTo("")==0
     }
 
     fun listFiveTickets(): List<FiveTicket> {

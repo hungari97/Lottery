@@ -4,5 +4,4 @@ interface LoginScreen {
 
     fun showError()
 
-    fun navigateToMenu()
 }

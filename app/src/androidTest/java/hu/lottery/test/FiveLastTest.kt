@@ -31,9 +31,9 @@ class FiveLastTest {
 
     @Test
     fun testScore() {
+        fiveScoreScreen.showWinnerNumbers(ArrayList(fiveScorePresenter.getWinnerFive().numbers))
 
-
-
+        fiveScoreScreen.showLastWeekTickets()
 
     }
 

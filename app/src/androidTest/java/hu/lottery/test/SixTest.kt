@@ -33,7 +33,7 @@ class SixTest {
     @Test
     fun test() {
         var original= AppDatabase.getInstance().sixTicketDao().getAllSixTicket().size
-        val randomValues=List(5) { Random.nextInt(1, 90) }
+        val randomValues=List(6) { Random.nextInt(1, 45) }
 
         val list=ArrayList<Int>()
         list.addAll(randomValues)

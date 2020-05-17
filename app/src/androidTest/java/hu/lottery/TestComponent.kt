@@ -3,10 +3,7 @@ package hu.lottery
 import dagger.Component
 import hu.lottery.mock.MockNetworkModule
 import hu.lottery.model.interactor.InteractorModule
-import hu.lottery.test.FiveLastTest
-import hu.lottery.test.FiveTest
-import hu.lottery.test.SixLastTest
-import hu.lottery.test.SixTest
+import hu.lottery.test.*
 import javax.inject.Singleton
 
 @Singleton
@@ -16,4 +13,5 @@ interface TestComponent : LotteryApplicationComponent {
     fun inject(sixTest: SixTest)
     fun inject(fiveLastTest: FiveLastTest)
     fun inject(sixLastTest: SixLastTest)
+    fun inject(weeklyTest: WeeklyTest)
 }
