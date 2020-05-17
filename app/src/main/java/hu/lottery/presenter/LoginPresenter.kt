@@ -4,15 +4,19 @@ import hu.lottery.model.interactor.DatabaseInteractor
 import hu.lottery.screen.LoginScreen
 import javax.inject.Inject
 
-class LoginPresenter @Inject constructor(private val databaseInteractor: DatabaseInteractor): Presenter<LoginScreen>() {
+class LoginPresenter @Inject constructor(private val databaseInteractor: DatabaseInteractor) :
+    Presenter<LoginScreen>() {
     override fun attachScreen(screen: LoginScreen) {
         super.attachScreen(screen)
     }
+
     override fun detachScreen() {
         super.detachScreen()
     }
 
-    fun login(){}
+    fun login(name: String, password: String) {
+        databaseInteractor.authenticateUser(name,password)
+    }
 
-    fun register(){}
+    //fun register() {}
 }

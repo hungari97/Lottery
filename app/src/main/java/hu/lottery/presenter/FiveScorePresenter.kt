@@ -7,15 +7,18 @@ import hu.lottery.screen.FiveScoreScreen
 import java.util.concurrent.Executor
 import javax.inject.Inject
 
-class FiveScorePresenter @Inject constructor(private val databaseInteractor: DatabaseInteractor, private val winnerNumberInteractor: WinnerNumberInteractor): Presenter<FiveScoreScreen>() {
+class FiveScorePresenter @Inject constructor(
+    private val databaseInteractor: DatabaseInteractor,
+    private val winnerNumberInteractor: WinnerNumberInteractor
+) : Presenter<FiveScoreScreen>() {
 
-    fun getWinnerFive():List<FiveTicket>{
-        winnerNumberInteractor.getWinnerNumber()
-    }
+    fun getWinnerFive(): List<FiveTicket> =
+        listOf(winnerNumberInteractor.getWinnerFiveNumber())
 
     override fun attachScreen(screen: FiveScoreScreen) {
         super.attachScreen(screen)
     }
+
     override fun detachScreen() {
         super.detachScreen()
     }

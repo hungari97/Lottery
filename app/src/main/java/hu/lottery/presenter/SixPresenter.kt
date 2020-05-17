@@ -1,5 +1,8 @@
 package hu.lottery.presenter
 
+import android.icu.util.Calendar
+import hu.lottery.model.FiveTicket
+import hu.lottery.model.SixTicket
 import hu.lottery.model.interactor.DatabaseInteractor
 import hu.lottery.screen.SixScreen
 import javax.inject.Inject
@@ -15,5 +18,6 @@ class SixPresenter @Inject constructor(private val databaseInteractor: DatabaseI
         super.detachScreen()
     }
 
-    fun addNewTicket(numbers: List<Int>) {}
+    fun addNewTicket(numbers: List<Int>) {
+        databaseInteractor.addNewSixTickets(listOf(SixTicket(numbers, Calendar.WEEK_OF_YEAR)))}
 }
