@@ -4,6 +4,7 @@ package hu.lottery.view
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -56,7 +57,9 @@ class SixActivity : AppCompatActivity(), SixScreen {
 
         btSendSixTicket.setOnClickListener {
             if (newTicket.size == 6) {
-                sixPresenter.addNewTicket(newTicket)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    sixPresenter.addNewTicket(newTicket)
+                }
                 startActivity(Intent(this, MenuActivity::class.java))
             }
         }
