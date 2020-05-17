@@ -60,6 +60,7 @@ class MockLotteryApi : LotteryApi {
             fifth = body.numbers[4],
             week = Calendar.WEEK_OF_YEAR
         )
+        
         var temp=AppDatabase.getInstance(Context).fiveTicketDao().insertFiveTicket(entity)
 
         val call = object :  Call<Void?> {

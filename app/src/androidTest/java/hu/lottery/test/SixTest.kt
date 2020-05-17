@@ -1,5 +1,6 @@
 package hu.lottery.test
 
+import hu.lottery.LotteryApplication
 import hu.lottery.database.AppDatabase
 import hu.lottery.presenter.SixPresenter
 import hu.lottery.screen.SixScreen
@@ -10,6 +11,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito
 import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
 import javax.inject.Inject
 import kotlin.random.Random
 
@@ -32,14 +34,14 @@ class SixTest {
 
     @Test
     fun test() {
-        var original= AppDatabase.getInstance().sixTicketDao().getAllSixTicket().size
+        var original= AppDatabase.getInstance(RuntimeEnvironment.application as LotteryApplication).sixTicketDao().getAllSixTicket().size
         val randomValues=List(6) { Random.nextInt(1, 45) }
 
         val list=ArrayList<Int>()
         list.addAll(randomValues)
 
         sixPresenter.addNewTicket(list)
-        var new= AppDatabase.getInstance().sixTicketDao().getAllSixTicket().size
+        var new= AppDatabase.getInstance(RuntimeEnvironment.application as LotteryApplication).sixTicketDao().getAllSixTicket().size
 
         assert(original!=new)
 

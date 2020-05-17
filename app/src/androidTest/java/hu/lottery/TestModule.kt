@@ -16,8 +16,6 @@ class TestModule(private val context: Context) {
     @Singleton
     fun provideSixPresenter() = SixPresenter()
 
-    @Provides
-    @Singleton
-    fun provideArtistsPresenter() = ArtistsPresenter(executor, artistsInteractor)
+
 
 }

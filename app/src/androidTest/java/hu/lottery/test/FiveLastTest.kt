@@ -1,5 +1,6 @@
 package hu.lottery.test
 
+import hu.lottery.LotteryApplication
 import hu.lottery.presenter.FiveScorePresenter
 import hu.lottery.screen.FiveScoreScreen
 import hu.lottery.testInjector

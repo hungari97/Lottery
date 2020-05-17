@@ -1,9 +1,8 @@
 package hu.lottery.test
 
+import hu.lottery.LotteryApplication
 import hu.lottery.database.AppDatabase
 import hu.lottery.presenter.FivePresenter
-import hu.lottery.presenter.FiveScorePresenter
-import hu.lottery.screen.FiveScoreScreen
 import hu.lottery.screen.FiveScreen
 import hu.lottery.testInjector
 import org.junit.After
@@ -12,18 +11,18 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito
 import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
 import javax.inject.Inject
 import kotlin.random.Random
+import hu.lottery.TestModule
 
 @RunWith(RobolectricTestRunner::class)
 class FiveTest {
-
 
     @Inject
     lateinit var fivePresenter: FivePresenter
 
     private lateinit var fiveScreen: FiveScreen
-    private lateinit var query: String
 
     @Before
     @Throws(Exception::class)
@@ -31,6 +30,7 @@ class FiveTest {
         testInjector.inject(this)
         fiveScreen = Mockito.mock(FiveScreen::class.java)!!
         fivePresenter.attachScreen(fiveScreen)
+
     }
 
     @Test
@@ -42,7 +42,7 @@ class FiveTest {
         list.addAll(randomValues)
 
         fivePresenter.addNewTicket(list)
-        var new=AppDatabase.getInstance().fiveTicketDao().getAllFiveTicket().size
+        var new=AppDatabase.getInstance(RuntimeEnvironment.application as LotteryApplication).fiveTicketDao().getAllFiveTicket().size
 
         assert(original!=new)
 
