@@ -1,6 +1,7 @@
 package hu.lottery.view
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -40,7 +41,9 @@ class FiveActivity : AppCompatActivity(), FiveScreen {
 
         btToLastFiveTickets.setOnClickListener {
             if (newTicket.size == 5) {
-				fivePresenter.addNewTicket(newTicket)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    fivePresenter.addNewTicket(newTicket)
+                }
                 startActivity(
                     Intent(
                         this,
