@@ -4,6 +4,7 @@ import android.content.Context
 import hu.lottery.database.AppDatabase
 import hu.lottery.database.dao.FiveTicketDao
 import hu.lottery.database.entity.FiveTicketEntity
+import hu.lottery.database.entity.SixTicketEntity
 import hu.lottery.model.FiveTicket
 import hu.lottery.model.SixTicket
 import hu.lottery.network.client.api.LotteryApi
@@ -18,37 +19,32 @@ class MockLotteryApi : LotteryApi {
 
     override fun getLastFive(token: String?): Call<List<FiveTicket?>?>? {
         var temp=AppDatabase.getInstance().fiveTicketDao().getAllFiveTicket()
+        var list=ArrayList<FiveTicket>()
 
-        val call = object : Call<List<FiveTicket?>?> {
-            override fun enqueue(callback: Callback<List<FiveTicket?>?>?) {
+        for( tick : FiveTicketEntity in temp){
+            if(tick.week==Calendar.WEEK_OF_YEAR-1){
+
+                list.add(FiveTicket(
+                    numbers = listOf(tick.first,tick.second,tick.third,tick.fourth,tick.fifth),
+                week = tick.week
+                ))
             }
-
-            @Throws(IOException::class)
-            override fun execute(): Response<List<FiveTicket?>?> {
-                return Response.success(temp)
-            }
-
-            override fun isExecuted(): Boolean {
-                return false
-            }
-
-            override fun cancel() {
-
-            }
-
-            override fun isCanceled(): Boolean {
-                return false
-            }
-
-            override fun clone(): Call<List<FiveTicket?>?> {
-                return this
-            }
-
         }
-        return call
+
+        list.add(
+            FiveTicket(
+            numbers = listOf(5,23,27,48,57),
+                week = Calendar.WEEK_OF_YEAR-1
+        ))
+
+
+        val obj = MockCall<List<FiveTicket?>?>(list)
+
+
+        return obj
     }
 
-    override fun postFive(token: String?, body: FiveTicket?): Call<Void?>? {
+    override fun postFive(token: String?, body: FiveTicket?): Call<Void> {
 
 
         var entity = FiveTicketEntity(
@@ -60,44 +56,59 @@ class MockLotteryApi : LotteryApi {
             fifth = body.numbers[4],
             week = Calendar.WEEK_OF_YEAR
         )
-        
+
         var temp=AppDatabase.getInstance(Context).fiveTicketDao().insertFiveTicket(entity)
 
-        val call = object :  Call<Void?> {
-            override fun enqueue(callback: Callback<Void?>?) {
-            }
 
-            @Throws(IOException::class)
-            override fun execute(): Response<Void?> {
-                return Response.success()
-            }
-
-            override fun isExecuted(): Boolean {
-                return false
-            }
-
-            override fun cancel() {
-
-            }
-
-            override fun isCanceled(): Boolean {
-                return false
-            }
-
-            override fun clone(): Call<Void?> {
-                return this
-            }
-
-        }
+        val call = CallVoid()
 
         return call
     }
 
     override fun getLastSix(token: String?): Call<List<SixTicket?>?>? {
-        TODO("Not yet implemented")
+        var temp=AppDatabase.getInstance().sixTicketDao().getAllSixTicket()
+        var list=ArrayList<SixTicket>()
+
+        for( tick : SixTicketEntity in temp){
+            if(tick.week==Calendar.WEEK_OF_YEAR-1){
+
+                list.add(SixTicket(
+                    numbers = listOf(tick.first,tick.second,tick.third,tick.fourth,tick.fifth,tick.sixth),
+                    week = tick.week
+                ))
+            }
+        }
+
+        list.add(
+            SixTicket(
+                numbers = listOf(5,23,27,36,40,43),
+                week = Calendar.WEEK_OF_YEAR-1
+            ))
+
+
+        val obj = MockCall<List<SixTicket?>?>(list)
+
+
+        return obj
     }
 
-    override fun postSix(token: String?, body: SixTicket?): Call<Void?>? {
-        AppDatabase.getInstance().sixTicketDao().insertSixTicket(body)
+    override fun postSix(token: String?, body: SixTicket?): Call<Void> {
+        var entity = SixTicketEntity(
+        Id=0,
+        first = body!!.numbers[0],
+        second = body.numbers[1],
+        third = body.numbers[2],
+        fourth = body.numbers[3],
+        fifth = body.numbers[4],
+        sixth= body.numbers[5],
+        week = Calendar.WEEK_OF_YEAR
+    )
+
+        var temp=AppDatabase.getInstance(Context).sixTicketDao().insertSixTicket(entity)
+
+
+        val call = CallVoid()
+
+        return call
     }
 }

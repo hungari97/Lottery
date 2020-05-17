@@ -15,32 +15,10 @@ class MockWinnerApi : WinnerApi {
             val ticket = FiveTicket()
             ticket.week = 20
             ticket.numbers = listOf(6, 11, 23, 42, 69)
-            val call = object : Call<FiveTicket> {
-                override fun enqueue(callback: Callback<FiveTicket>?) {
-                }
+            val obj =MockCall<FiveTicket>(ticket)
 
-                @Throws(IOException::class)
-                override fun execute(): Response<FiveTicket> {
-                    return Response.success(ticket)
-                }
 
-                override fun isExecuted(): Boolean {
-                    return false
-                }
-
-                override fun cancel() {
-
-                }
-
-                override fun isCanceled(): Boolean {
-                    return false
-                }
-
-                override fun clone(): Call<FiveTicket> {
-                    return this
-                }
-            }
-            return call
+            return obj
         }
 
     override val winnerSix: Call<SixTicket>
@@ -48,32 +26,9 @@ class MockWinnerApi : WinnerApi {
             val ticket = SixTicket()
             ticket.week = 20
             ticket.numbers = listOf(9, 19, 20, 29, 42, 45)
-            val call = object : Call<SixTicket> {
-                override fun enqueue(callback: Callback<SixTicket>?) {
-                }
+            val obj =MockCall<SixTicket>(ticket)
 
-                @Throws(IOException::class)
-                override fun execute(): Response<SixTicket> {
-                    return Response.success(ticket)
-                }
-
-                override fun isExecuted(): Boolean {
-                    return false
-                }
-
-                override fun cancel() {
-
-                }
-
-                override fun isCanceled(): Boolean {
-                    return false
-                }
-
-                override fun clone(): Call<SixTicket> {
-                    return this
-                }
-            }
-            return call
+            return obj
         }
 
 }

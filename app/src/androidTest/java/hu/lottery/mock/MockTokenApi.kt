@@ -14,32 +14,7 @@ class MockTokenApi : TokenApi {
         else
             temp = "nope"
 
-        val call = object : Call<String> {
-            override fun enqueue(callback: Callback<String>?) {
-            }
-
-            @Throws(IOException::class)
-            override fun execute(): Response<String> {
-                return Response.success(temp)
-            }
-
-            override fun isExecuted(): Boolean {
-                return false
-            }
-
-            override fun cancel() {
-
-            }
-
-            override fun isCanceled(): Boolean {
-                return false
-            }
-
-            override fun clone(): Call<String> {
-                return this
-            }
-
-        }
+        val call = MockCall<String>(temp)
 
         return call
     }

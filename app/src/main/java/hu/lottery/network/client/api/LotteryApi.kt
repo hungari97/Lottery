@@ -30,7 +30,7 @@ interface LotteryApi {
     @POST("FiveLottery,{token}")
     fun postFive(
         @Path("token") token: String?, @Body body: FiveTicket?
-    ): Call<Void?>?
+    ): Call<Void>
 
     /**
      * Get the six tickets
@@ -53,5 +53,5 @@ interface LotteryApi {
     @POST("SixLottery")
     fun postSix(
         @Path("token") token: String?, @Body body: SixTicket?
-    ): Call<Void?>?
+    ): Call<Void>
 }

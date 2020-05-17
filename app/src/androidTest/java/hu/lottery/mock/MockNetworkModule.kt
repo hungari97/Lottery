@@ -7,6 +7,8 @@ import javax.inject.Singleton
 
 class MockNetworkModule {
 
+
+
     @Provides
     @Singleton
     fun provideLotteryApi(): LotteryApi = MockLotteryApi()
