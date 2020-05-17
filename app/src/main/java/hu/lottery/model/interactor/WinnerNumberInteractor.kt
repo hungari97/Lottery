@@ -10,7 +10,7 @@ class WinnerNumberInteractor @Inject constructor(
 
 
 
-    fun getWinnerFiveNumber():List<FiveTicket>{
-        winnerApi.winnerFive.
+    fun getWinnerFiveNumber():List<Int>{
+        return winnerApi.winnerFive
     }
 }

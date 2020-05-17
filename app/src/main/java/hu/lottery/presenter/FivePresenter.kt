@@ -13,5 +13,5 @@ class FivePresenter @Inject constructor(private val databaseInteractor: Database
         super.detachScreen()
     }
 
-    fun addNewTicket(numbers: ArrayList<Int>){}
+    fun addNewTicket(numbers: List<Int>){}
 }

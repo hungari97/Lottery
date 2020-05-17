@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class FiveScorePresenter @Inject constructor(private val databaseInteractor: DatabaseInteractor, private val winnerNumberInteractor: WinnerNumberInteractor): Presenter<FiveScoreScreen>() {
 
-    fun getWinnerFive():List<FiveTicket>{
+    fun getWinnerFive():List<Int>{
         winnerNumberInteractor.getWinnerNumber()
     }
 
