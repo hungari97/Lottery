@@ -12,8 +12,11 @@ class FiveScorePresenter @Inject constructor(
     private val winnerNumberInteractor: WinnerNumberInteractor
 ) : Presenter<FiveScoreScreen>() {
 
-    fun getWinnerFive(): List<FiveTicket> =
-        listOf(winnerNumberInteractor.getWinnerFiveNumber())
+    fun getWinnerFive(): FiveTicket =
+        winnerNumberInteractor.getWinnerFiveNumber()
+
+    fun listFive(): List<FiveTicket> =
+        databaseInteractor.listFiveTickets()
 
     override fun attachScreen(screen: FiveScoreScreen) {
         super.attachScreen(screen)
