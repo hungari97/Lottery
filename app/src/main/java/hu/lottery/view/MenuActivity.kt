@@ -21,7 +21,8 @@ class MenuActivity : AppCompatActivity(), MenuScreen {
         btFiveLottery.setOnClickListener { startActivity(Intent(this, FiveActivity::class.java)) }
         btSixLottery.setOnClickListener { startActivity(Intent(this, SixActivity::class.java)) }
         btWeeklyTickets.setOnClickListener { startActivity(Intent(this,WeeklyNumberActivity::class.java)) }
-        //TODO ötös, hatos és eheti gomb bekötése
+        ivFive.bringToFront()
+        ivSix.bringToFront()
     }
 
     @Inject

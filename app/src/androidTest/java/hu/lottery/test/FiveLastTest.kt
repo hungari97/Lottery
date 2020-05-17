@@ -1,6 +1,7 @@
 package hu.lottery.test
 
-import hu.lottery.LotteryApplication
+
+import hu.lottery.model.FiveTicket
 import hu.lottery.presenter.FiveScorePresenter
 import hu.lottery.screen.FiveScoreScreen
 import hu.lottery.testInjector
@@ -8,7 +9,6 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.ArgumentCaptor
 import org.mockito.Mockito
 import org.robolectric.RobolectricTestRunner
 import javax.inject.Inject
@@ -32,10 +32,15 @@ class FiveLastTest {
 
     @Test
     fun testScore() {
-        fiveScoreScreen.showWinnerNumbers(ArrayList(fiveScorePresenter.getWinnerFive().numbers))
+        assert(fiveScorePresenter.getWinnerFive().numbers.equals(listOf(6, 11, 23, 42, 69)))
+    }
 
-        fiveScoreScreen.showLastWeekTickets(fiveScorePresenter.listFive())
-
+    @Test
+    fun testTicket(){
+        for(tick: FiveTicket in fiveScorePresenter.listFive()){
+            if (equals(listOf(5,23,27,48,57)))
+                assert(tick.equals(listOf(5,23,27,48,57)))
+        }
     }
 
     @After

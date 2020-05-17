@@ -1,5 +1,6 @@
 package hu.lottery.test
 
+import hu.lottery.model.SixTicket
 import hu.lottery.presenter.SixScorePresenter
 import hu.lottery.screen.SixScoreScreen
 import hu.lottery.testInjector
@@ -27,9 +28,16 @@ class SixLastTest {
     }
 
     @Test
-    fun testScore() {
+    fun testWinner() {
+        assert(sixScorePresenter.getWinnerSix().numbers.equals(listOf(9, 19, 20, 29, 42, 45)))
+    }
 
-
+    @Test
+    fun testTicket(){
+        for(tick: SixTicket in sixScorePresenter.listSix()){
+            if (equals(listOf(5,23,27,36,40,43)))
+                assert(tick.equals(listOf(5,23,27,36,40,43)))
+        }
     }
 
     @After
