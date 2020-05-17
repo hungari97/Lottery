@@ -12,7 +12,7 @@ interface SixTicketDao {
     @Query("SELECT first,second,third,fourth,fifth FROM sixTickets")
     fun getSixWinner(): List<Int>
     @Query("SELECT * FROM sixTickets")
-    fun getSixTicket(): SixTicketEntity
+    fun getAllSixTicket(): List<SixTicketEntity>
     @Insert
     fun insertSixTicket(vararg sixTicket: SixTicketEntity)
     @Delete

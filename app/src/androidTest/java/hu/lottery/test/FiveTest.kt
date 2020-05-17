@@ -36,9 +36,15 @@ class FiveTest {
     @Test
     fun test() {
         var original=AppDatabase.getInstance().fiveTicketDao().getAllFiveTicket().size
-        val randomValues = List(5) { Random.nextInt(1, 90) }
+        val randomValues=List(5) { Random.nextInt(1, 90) }
 
-        fivePresenter.addNewTicket(randomValues)
+        val list=ArrayList<Int>()
+        list.addAll(randomValues)
+
+        fivePresenter.addNewTicket(list)
+        var new=AppDatabase.getInstance().fiveTicketDao().getAllFiveTicket().size
+
+        assert(original!=new)
 
     }
 

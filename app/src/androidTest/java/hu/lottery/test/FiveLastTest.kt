@@ -20,7 +20,6 @@ class FiveLastTest {
     lateinit var fiveScorePresenter: FiveScorePresenter
 
     private lateinit var fiveScoreScreen: FiveScoreScreen
-    private lateinit var query: String
 
     @Before
     @Throws(Exception::class)
@@ -33,7 +32,8 @@ class FiveLastTest {
     @Test
     fun testScore() {
 
-        fiveScoreScreen.showWinnerNumbers()
+
+
 
     }
 
