@@ -13,17 +13,9 @@ class WinnerNumberInteractor @Inject constructor(
         val response = call.execute() ?: throw Error("No response was returned")
         return response.body()
     }
-
-<<<<<<< HEAD
-
-
-    fun getWinnerFiveNumber():List<Int>{
-        return winnerApi.winnerFive
-=======
     fun getWinnerSixNumber():SixTicket{
         val call = winnerApi.winnerSix
         val response = call.execute() ?: throw Error("No response was returned")
         return response.body()
->>>>>>> 356c4e94342bacbb1c7ea998a9e4a076932bf86a
     }
 }

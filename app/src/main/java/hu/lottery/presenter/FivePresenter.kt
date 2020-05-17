@@ -1,6 +1,8 @@
 package hu.lottery.presenter
 
 import android.icu.util.Calendar
+import android.os.Build
+import androidx.annotation.RequiresApi
 import hu.lottery.model.FiveTicket
 import hu.lottery.model.interactor.DatabaseInteractor
 import hu.lottery.screen.FiveScreen
@@ -15,11 +17,9 @@ class FivePresenter @Inject constructor(private val databaseInteractor: Database
         super.detachScreen()
     }
 
-<<<<<<< HEAD
-    fun addNewTicket(numbers: List<Int>){}
-=======
-    fun addNewTicket(numbers: ArrayList<Int>){
+    @RequiresApi(Build.VERSION_CODES.N)
+    fun addNewTicket(numbers: List<Int>){
         databaseInteractor.addNewFiveTickets(listOf(FiveTicket(numbers, Calendar.WEEK_OF_YEAR)))
     }
->>>>>>> 356c4e94342bacbb1c7ea998a9e4a076932bf86a
+
 }
