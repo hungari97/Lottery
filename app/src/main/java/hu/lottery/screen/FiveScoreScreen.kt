@@ -1,8 +1,10 @@
 package hu.lottery.screen
 
+import hu.lottery.model.FiveTicket
+
 interface FiveScoreScreen {
 
-    fun showWinnerNumbers(numbers :ArrayList<Int>)
+    fun showWinnerNumbers(numbers :List<Int>)
 
-    fun showLastWeekTickets(tickets: List<ArrayList<Int>>)
+    fun showLastWeekTickets(tickets: List<FiveTicket>)
 }

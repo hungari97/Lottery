@@ -14,11 +14,11 @@ import retrofit2.Response
 import java.io.IOException
 import java.util.*
 
-class MockLotteryApi : LotteryApi {
+class MockLotteryApi (private val context: Context): LotteryApi {
 
 
     override fun getLastFive(token: String?): Call<List<FiveTicket?>?>? {
-        var temp=AppDatabase.getInstance().fiveTicketDao().getAllFiveTicket()
+        var temp=AppDatabase.getInstance(context).fiveTicketDao().getAllFiveTicket()
         var list=ArrayList<FiveTicket>()
 
         for( tick : FiveTicketEntity in temp){
@@ -57,7 +57,7 @@ class MockLotteryApi : LotteryApi {
             week = Calendar.WEEK_OF_YEAR
         )
 
-        var temp=AppDatabase.getInstance(Context).fiveTicketDao().insertFiveTicket(entity)
+        var temp=AppDatabase.getInstance(context).fiveTicketDao().insertFiveTicket(entity)
 
 
         val call = CallVoid()
@@ -66,7 +66,7 @@ class MockLotteryApi : LotteryApi {
     }
 
     override fun getLastSix(token: String?): Call<List<SixTicket?>?>? {
-        var temp=AppDatabase.getInstance().sixTicketDao().getAllSixTicket()
+        var temp=AppDatabase.getInstance(context).sixTicketDao().getAllSixTicket()
         var list=ArrayList<SixTicket>()
 
         for( tick : SixTicketEntity in temp){
@@ -104,7 +104,7 @@ class MockLotteryApi : LotteryApi {
         week = Calendar.WEEK_OF_YEAR
     )
 
-        var temp=AppDatabase.getInstance(Context).sixTicketDao().insertSixTicket(entity)
+        var temp=AppDatabase.getInstance(context).sixTicketDao().insertSixTicket(entity)
 
 
         val call = CallVoid()

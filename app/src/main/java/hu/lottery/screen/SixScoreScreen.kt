@@ -1,9 +1,11 @@
 package hu.lottery.screen
 
+import hu.lottery.model.SixTicket
+
 interface SixScoreScreen {
 
-    fun showWinnerNumbers(numbers :ArrayList<Int>)
+    fun showWinnerNumbers(numbers :List<Int>)
 
-    fun showLastWeekTickets(tickets: List<ArrayList<Int>>)
+    fun showLastWeekTickets(tickets: List<SixTicket>)
 
 }

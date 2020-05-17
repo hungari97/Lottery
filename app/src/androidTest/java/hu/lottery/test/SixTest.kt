@@ -34,14 +34,14 @@ class SixTest {
 
     @Test
     fun test() {
-        var original= AppDatabase.getInstance(RuntimeEnvironment.application as LotteryApplication).sixTicketDao().getAllSixTicket().size
+        var original= sixPresenter.getSize()
         val randomValues=List(6) { Random.nextInt(1, 45) }
 
         val list=ArrayList<Int>()
         list.addAll(randomValues)
 
         sixPresenter.addNewTicket(list)
-        var new= AppDatabase.getInstance(RuntimeEnvironment.application as LotteryApplication).sixTicketDao().getAllSixTicket().size
+        var new= sixPresenter.getSize()
 
         assert(original!=new)
 

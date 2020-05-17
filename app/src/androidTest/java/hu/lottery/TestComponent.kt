@@ -14,4 +14,5 @@ interface TestComponent : LotteryApplicationComponent {
     fun inject(fiveLastTest: FiveLastTest)
     fun inject(sixLastTest: SixLastTest)
     fun inject(weeklyTest: WeeklyTest)
+
 }

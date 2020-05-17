@@ -44,7 +44,4 @@ class UIModule(private val context: Context) {
     @Singleton
     fun loginPresenter(databaseInteractor: DatabaseInteractor) = LoginPresenter(databaseInteractor)
 
-    @Provides
-    @Singleton
-    fun networkExecutor(): Executor = Executors.newFixedThreadPool(1)
 }

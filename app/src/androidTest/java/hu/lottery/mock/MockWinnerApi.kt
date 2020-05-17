@@ -1,5 +1,6 @@
 package hu.lottery.mock
 
+import android.content.Context
 import hu.lottery.model.FiveTicket
 import hu.lottery.model.SixTicket
 import hu.lottery.network.client.api.WinnerApi

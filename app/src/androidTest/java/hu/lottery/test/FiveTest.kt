@@ -14,7 +14,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import javax.inject.Inject
 import kotlin.random.Random
-import hu.lottery.TestModule
+
 
 @RunWith(RobolectricTestRunner::class)
 class FiveTest {
@@ -35,14 +35,15 @@ class FiveTest {
 
     @Test
     fun test() {
-        var original=AppDatabase.getInstance().fiveTicketDao().getAllFiveTicket().size
+
+        var original=fivePresenter.getSize()
         val randomValues=List(5) { Random.nextInt(1, 90) }
 
         val list=ArrayList<Int>()
         list.addAll(randomValues)
 
         fivePresenter.addNewTicket(list)
-        var new=AppDatabase.getInstance(RuntimeEnvironment.application as LotteryApplication).fiveTicketDao().getAllFiveTicket().size
+        var new=fivePresenter.getSize()
 
         assert(original!=new)
 

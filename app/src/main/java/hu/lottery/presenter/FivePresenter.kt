@@ -22,4 +22,6 @@ class FivePresenter @Inject constructor(private val databaseInteractor: Database
         databaseInteractor.addNewFiveTickets(listOf(FiveTicket(numbers, Calendar.WEEK_OF_YEAR)))
     }
 
+    fun getSize():Int{return databaseInteractor.listFiveTickets().size}
+
 }

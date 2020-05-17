@@ -23,4 +23,6 @@ class SixPresenter @Inject constructor(private val databaseInteractor: DatabaseI
     @RequiresApi(Build.VERSION_CODES.N)
     fun addNewTicket(numbers: List<Int>) {
         databaseInteractor.addNewSixTickets(listOf(SixTicket(numbers, Calendar.WEEK_OF_YEAR)))}
+
+    fun getSize():Int{return databaseInteractor.listSixTickets().size}
 }
