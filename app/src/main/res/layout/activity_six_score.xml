@@ -185,6 +185,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSentTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/tvSentTitle"
+            tools:listitem="@layout/row_item_six_ticket"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

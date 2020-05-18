@@ -19,10 +19,12 @@ class MenuActivity : AppCompatActivity(), MenuScreen {
 
 
         btFiveLottery.setOnClickListener { startActivity(Intent(this, FiveActivity::class.java)) }
+
         btSixLottery.setOnClickListener { startActivity(Intent(this, SixActivity::class.java)) }
+
         btWeeklyTickets.setOnClickListener { startActivity(Intent(this,WeeklyNumberActivity::class.java)) }
-        ivFive.bringToFront()
-        ivSix.bringToFront()
+        /*ivFive.bringToFront()
+        ivSix.bringToFront()*/
     }
 
     @Inject

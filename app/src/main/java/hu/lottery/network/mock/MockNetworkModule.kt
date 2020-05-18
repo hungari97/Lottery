@@ -4,6 +4,7 @@ import android.content.Context
 import dagger.Module
 import dagger.Provides
 import hu.lottery.network.client.api.LotteryApi
+import hu.lottery.network.client.api.TokenApi
 import hu.lottery.network.client.api.WinnerApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -26,4 +27,8 @@ class MockNetworkModule {
     @Provides
     @Singleton
     fun provideWinnerApi(): WinnerApi = MockWinnerApi()
+
+    @Provides
+    @Singleton
+    fun provideTokenApi(client: OkHttpClient): TokenApi = MockTokenApi()
 }
