@@ -44,7 +44,7 @@ class SixActivity : AppCompatActivity(), SixScreen {
         injector.inject(this)
         setContentView(R.layout.activity_six)
 
-        ibLastSixback.setOnClickListener { startActivity(Intent(this, MenuActivity::class.java)) }
+        ibNewSixBack.setOnClickListener { startActivity(Intent(this, MenuActivity::class.java)) }
 
         btToLastSixTickets.setOnClickListener {
             startActivity(
