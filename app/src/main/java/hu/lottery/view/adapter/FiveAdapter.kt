@@ -34,11 +34,11 @@ class FiveAdapter(
     override fun getItemCount() = fiveTickets.size
 
     override fun onBindViewHolder(holder: FiveViewHolder, position: Int) {
-        holder.textViews[0].setText(fiveTickets[position].numbers[0])
-        holder.textViews[1].setText(fiveTickets[position].numbers[1])
-        holder.textViews[2].setText(fiveTickets[position].numbers[2])
-        holder.textViews[3].setText(fiveTickets[position].numbers[3])
-        holder.textViews[4].setText(fiveTickets[position].numbers[4])
+        holder.textViews[0].setText(fiveTickets[position].numbers[0].toString())
+        holder.textViews[1].setText(fiveTickets[position].numbers[1].toString())
+        holder.textViews[2].setText(fiveTickets[position].numbers[2].toString())
+        holder.textViews[3].setText(fiveTickets[position].numbers[3].toString())
+        holder.textViews[4].setText(fiveTickets[position].numbers[4].toString())
     }
 
 }

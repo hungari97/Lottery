@@ -1,7 +1,7 @@
 package hu.lottery
 
 import dagger.Component
-import hu.lottery.mock.MockNetworkModule
+import hu.lottery.mocko.MockNetworkModule
 import hu.lottery.model.interactor.InteractorModule
 import javax.inject.Singleton
 

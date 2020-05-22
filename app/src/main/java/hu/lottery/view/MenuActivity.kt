@@ -16,7 +16,7 @@ class MenuActivity : AppCompatActivity(), MenuScreen {
         super.onCreate(savedInstanceState)
         injector.inject(this)
         setContentView(R.layout.activity_menu)
-
+        menuPresenter.initialisation(applicationContext)
 
         btFiveLottery.setOnClickListener { startActivity(Intent(this, FiveActivity::class.java)) }
 

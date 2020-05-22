@@ -1,10 +1,12 @@
 package hu.lottery.presenter
 
+import android.content.Context
 import hu.lottery.screen.MenuScreen
 
 class MenuPresenter: Presenter<MenuScreen>() {
 
-
+    fun initialisation(context: Context){
+        }
 
     override fun attachScreen(screen: MenuScreen) {
         super.attachScreen(screen)

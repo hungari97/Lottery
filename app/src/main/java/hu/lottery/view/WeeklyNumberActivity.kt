@@ -9,19 +9,30 @@ import hu.lottery.injector
 import hu.lottery.presenter.WeeklyPresenter
 import hu.lottery.screen.WeeklyScreen
 import hu.lottery.view.adapter.FiveAdapter
+import hu.lottery.view.adapter.SixAdapter
 import kotlinx.android.synthetic.main.activity_five_score.*
 import kotlinx.android.synthetic.main.activity_weekly_number.*
+import java.util.*
 import javax.inject.Inject
 
 class WeeklyNumberActivity : AppCompatActivity(),WeeklyScreen {
 
     @Inject
     lateinit var weeklyPresenter: WeeklyPresenter
-    lateinit var adapter: FiveAdapter
+    lateinit var fiveadapter: FiveAdapter
+    lateinit var sixAdapter: SixAdapter
 
-    override fun showWeeklyNumbers(numbers: List<List<Int>>) {
-        adapter = FiveAdapter(this, weeklyPresenter.listFive())
-        rvLastFive.adapter = adapter
+    override fun showWeeklyNumbers() {
+        val five = weeklyPresenter.listFive()
+
+
+        fiveadapter = FiveAdapter(this, five)
+        rvWeeklyFive.adapter = fiveadapter
+
+        val six = weeklyPresenter.listSix()
+
+        sixAdapter= SixAdapter(this, six)
+        rvWeeklySix.adapter=sixAdapter
     }
 
     override fun onStart() {
@@ -40,6 +51,7 @@ class WeeklyNumberActivity : AppCompatActivity(),WeeklyScreen {
         injector.inject(this)
         setContentView(R.layout.activity_weekly_number)
 
+        showWeeklyNumbers()
         ibWeeklyback.setOnClickListener { startActivity(Intent(this,MenuActivity::class.java)) }
 
         //TODO vissza gomb becsatolása

@@ -115,12 +115,12 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:textSize="@dimen/number_chooser_size"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="@dimen/number_button_height" />
 
                 <Button
                         android:id="@+id/btSix2"
                         android:text="2"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -132,7 +132,7 @@
                 <Button
                         android:id="@+id/btSix3"
                         android:text="3"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -144,7 +144,7 @@
                 <Button
                         android:id="@+id/btSix4"
                         android:text="4"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -156,7 +156,7 @@
                 <Button
                         android:id="@+id/btSix5"
                         android:text="5"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -168,7 +168,7 @@
                 <Button
                         android:id="@+id/btSix6"
                         android:text="6"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -179,7 +179,7 @@
                 <Button
                         android:id="@+id/btSix7"
                         android:text="7"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -210,12 +210,12 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:textSize="@dimen/number_chooser_size"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="@dimen/number_button_height" />
 
                 <Button
                         android:id="@+id/btSix9"
                         android:text="9"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -227,7 +227,7 @@
                 <Button
                         android:id="@+id/btSix10"
                         android:text="10"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -239,7 +239,7 @@
                 <Button
                         android:id="@+id/btSix11"
                         android:text="11"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -251,7 +251,7 @@
                 <Button
                         android:id="@+id/btSix12"
                         android:text="12"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -263,7 +263,7 @@
                 <Button
                         android:id="@+id/btSix13"
                         android:text="13"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -274,7 +274,7 @@
                 <Button
                         android:id="@+id/btSix14"
                         android:text="14"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -303,12 +303,12 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:textSize="@dimen/number_chooser_size"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="@dimen/number_button_height" />
 
                 <Button
                         android:id="@+id/btSix16"
                         android:text="16"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -320,7 +320,7 @@
                 <Button
                         android:id="@+id/btSix17"
                         android:text="17"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -332,7 +332,7 @@
                 <Button
                         android:id="@+id/btSix18"
                         android:text="18"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -344,7 +344,7 @@
                 <Button
                         android:id="@+id/btSix19"
                         android:text="19"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -356,7 +356,7 @@
                 <Button
                         android:id="@+id/btSix20"
                         android:text="20"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -367,7 +367,7 @@
                 <Button
                         android:id="@+id/btSix21"
                         android:text="21"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -395,12 +395,12 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:textSize="@dimen/number_chooser_size"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="@dimen/number_button_height" />
 
                 <Button
                         android:id="@+id/btSix23"
                         android:text="23"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -412,7 +412,7 @@
                 <Button
                         android:id="@+id/btSix24"
                         android:text="24"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -424,7 +424,7 @@
                 <Button
                         android:id="@+id/btSix25"
                         android:text="25"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -436,7 +436,7 @@
                 <Button
                         android:id="@+id/btSix26"
                         android:text="26"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -448,7 +448,7 @@
                 <Button
                         android:id="@+id/btSix27"
                         android:text="27"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -459,7 +459,7 @@
                 <Button
                         android:id="@+id/btSix28"
                         android:text="28"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -487,12 +487,12 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:textSize="@dimen/number_chooser_size"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="@dimen/number_button_height" />
 
                 <Button
                         android:id="@+id/btSix30"
                         android:text="30"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -504,7 +504,7 @@
                 <Button
                         android:id="@+id/btSix31"
                         android:text="31"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -516,7 +516,7 @@
                 <Button
                         android:id="@+id/btSix32"
                         android:text="32"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -528,7 +528,7 @@
                 <Button
                         android:id="@+id/btSix33"
                         android:text="33"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -540,7 +540,7 @@
                 <Button
                         android:id="@+id/btSix34"
                         android:text="34"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -551,7 +551,7 @@
                 <Button
                         android:id="@+id/btSix35"
                         android:text="35"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -579,12 +579,12 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:textSize="@dimen/number_chooser_size"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="@dimen/number_button_height" />
 
                 <Button
                         android:id="@+id/btSix37"
                         android:text="37"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -596,7 +596,7 @@
                 <Button
                         android:id="@+id/btSix38"
                         android:text="38"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -608,7 +608,7 @@
                 <Button
                         android:id="@+id/btSix39"
                         android:text="39"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -620,7 +620,7 @@
                 <Button
                         android:id="@+id/btSix40"
                         android:text="40"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -632,7 +632,7 @@
                 <Button
                         android:id="@+id/btSix41"
                         android:text="41"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -643,7 +643,7 @@
                 <Button
                         android:id="@+id/btSix42"
                         android:text="42"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -671,12 +671,12 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:textSize="@dimen/number_chooser_size"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="@dimen/number_button_height" />
 
                 <Button
                         android:id="@+id/btSix44"
                         android:text="44"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
@@ -688,7 +688,7 @@
                 <Button
                         android:id="@+id/btSix45"
                         android:text="45"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_width="0dp"
                         android:layout_weight="1"
 
@@ -698,7 +698,7 @@
                         android:textSize="@dimen/number_chooser_size" />
                 <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/number_button_height"
                         android:layout_weight="4"
                         android:layout_marginEnd="64dp"/>
             </LinearLayout>

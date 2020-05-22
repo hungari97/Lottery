@@ -5,6 +5,7 @@ import hu.lottery.model.SixTicket
 import hu.lottery.model.interactor.DatabaseInteractor
 import hu.lottery.model.interactor.WinnerNumberInteractor
 import hu.lottery.screen.SixScoreScreen
+import java.util.*
 import java.util.concurrent.Executor
 import javax.inject.Inject
 
@@ -17,7 +18,7 @@ class SixScorePresenter @Inject constructor(
         winnerNumberInteractor.getWinnerSixNumber()
 
     fun listSix(): List<SixTicket> =
-        databaseInteractor.listSixTickets()
+        databaseInteractor.listSixTickets().filter { it.week== Calendar.WEEK_OF_YEAR-1 }
 
     override fun attachScreen(screen: SixScoreScreen) {
         super.attachScreen(screen)

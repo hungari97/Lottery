@@ -50,13 +50,9 @@ class FiveScoreActivity : AppCompatActivity(), FiveScoreScreen {
         injector.inject(this)
         setContentView(R.layout.activity_five_score)
 
-
-
-
         showLastWeekTickets(fiveScorePresenter.listFive())
 
         showWinnerNumbers(fiveScorePresenter.getWinnerFive().numbers)
-
 
         ibLastFiveback.setOnClickListener { startActivity(Intent(this, FiveActivity::class.java)) }
 

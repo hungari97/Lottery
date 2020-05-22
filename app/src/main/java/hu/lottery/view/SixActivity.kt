@@ -27,14 +27,16 @@ class SixActivity : AppCompatActivity(), SixScreen {
 
     fun onClick(v: Button) {
 
-        if (v.background == getResources().getDrawable(R.drawable.number_style)) {
-            if (newTicket.size > 5) {
-                v.setBackground(getResources().getDrawable(R.drawable.choosen_number_style))
-                newTicket.add(v.text.toString().toInt())
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            if (v.background.constantState == getDrawable(R.drawable.number_style)!!.constantState) {
+                if (newTicket.size < 6) {
+                    v.setBackgroundResource(R.drawable.choosen_number_style)
+                    newTicket.add(v.text.toString().toInt())
+                }
+            } else {
+                v.setBackgroundResource((R.drawable.number_style))
+                newTicket.removeAt(newTicket.indexOf(v.text.toString().toInt()))
             }
-        } else {
-            v.setBackground(getResources().getDrawable(R.drawable.number_style))
-            newTicket.remove(newTicket.indexOf(v.text.toString().toInt()))
         }
     }
 

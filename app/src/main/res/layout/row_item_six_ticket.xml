@@ -16,7 +16,7 @@
             android:layout_marginBottom="8sp"
             android:layout_weight="1"
             android:paddingRight="2dp"
-            android:paddingLeft="2dp"
+            android:paddingLeft="8dp"
             android:layout_marginEnd="16sp"
             android:layout_marginStart="16sp"
             android:background="@drawable/full_rounded_style"
@@ -30,7 +30,7 @@
             android:layout_marginTop="8sp"
             android:layout_marginEnd="16sp"
             android:paddingRight="2dp"
-            android:paddingLeft="2dp"
+            android:paddingLeft="8dp"
             android:layout_marginBottom="8sp"
             android:layout_weight="1"
             android:background="@drawable/full_rounded_style"
@@ -46,7 +46,7 @@
             android:layout_marginBottom="8sp"
             android:layout_weight="1"
             android:paddingRight="2dp"
-            android:paddingLeft="2dp"
+            android:paddingLeft="8dp"
             android:background="@drawable/full_rounded_style"
             android:text="32"
             android:textSize="24sp" />
@@ -62,7 +62,7 @@
             android:background="@drawable/full_rounded_style"
             android:text="32"
             android:paddingRight="2dp"
-            android:paddingLeft="2dp"
+            android:paddingLeft="8dp"
             android:textSize="24sp" />
 
     <TextView
@@ -74,7 +74,7 @@
             android:layout_marginBottom="8sp"
             android:layout_weight="1"
             android:paddingRight="2dp"
-            android:paddingLeft="2dp"
+            android:paddingLeft="8dp"
             android:background="@drawable/full_rounded_style"
             android:text="32"
             android:textSize="24sp" />
@@ -89,6 +89,6 @@
             android:background="@drawable/full_rounded_style"
             android:text="32"
             android:paddingRight="2dp"
-            android:paddingLeft="2dp"
+            android:paddingLeft="8dp"
             android:textSize="24sp" />
 </LinearLayout>

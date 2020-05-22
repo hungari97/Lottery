@@ -27,20 +27,20 @@ class SixAdapter (
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SixViewHolder {
-        val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.row_item_five_ticket, parent, false)
-        return SixViewHolder(view)
+        val inflater = LayoutInflater.from(context).inflate(
+            R.layout.row_item_six_ticket, parent, false)
+        return SixViewHolder(inflater)
     }
 
     override fun getItemCount() = sixTickets.size
 
     override fun onBindViewHolder(holder: SixViewHolder, position: Int) {
-        holder.textViews[0].setText(sixTickets[position].numbers[0])
-        holder.textViews[1].setText(sixTickets[position].numbers[1])
-        holder.textViews[2].setText(sixTickets[position].numbers[2])
-        holder.textViews[3].setText(sixTickets[position].numbers[3])
-        holder.textViews[4].setText(sixTickets[position].numbers[4])
-        holder.textViews[5].setText(sixTickets[position].numbers[5])
+        holder.textViews[0].setText(sixTickets[position].numbers[0].toString())
+        holder.textViews[1].setText(sixTickets[position].numbers[1].toString())
+        holder.textViews[2].setText(sixTickets[position].numbers[2].toString())
+        holder.textViews[3].setText(sixTickets[position].numbers[3].toString())
+        holder.textViews[4].setText(sixTickets[position].numbers[4].toString())
+        holder.textViews[5].setText(sixTickets[position].numbers[5].toString())
     }
 
 }

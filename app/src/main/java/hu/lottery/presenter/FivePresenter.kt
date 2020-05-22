@@ -19,7 +19,9 @@ class FivePresenter @Inject constructor(private val databaseInteractor: Database
 
     @RequiresApi(Build.VERSION_CODES.N)
     fun addNewTicket(numbers: List<Int>){
+        //Thread{Database.addFiveTicket((FiveTicket(numbers, Calendar.WEEK_OF_YEAR)))}.start()
         databaseInteractor.addNewFiveTickets(listOf(FiveTicket(numbers, Calendar.WEEK_OF_YEAR)))
+
     }
 
     fun getSize():Int{return databaseInteractor.listFiveTickets().size}

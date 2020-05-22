@@ -22,7 +22,6 @@
         <activity android:name=".view.FiveActivity">
         </activity>
         <activity android:name=".view.SixActivity">
-
         </activity>
         <activity
                 android:name=".view.LoginActivity"

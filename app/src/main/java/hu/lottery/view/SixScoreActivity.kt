@@ -21,9 +21,11 @@ class SixScoreActivity : AppCompatActivity(), SixScoreScreen {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        injector.inject(this)
         setContentView(R.layout.activity_six_score)
+        injector.inject(this)
 
+        showWinnerNumbers(sixScorePresenter.getWinnerSix().numbers)
+        showLastWeekTickets(sixScorePresenter.listSix())
         ibLastSixback.setOnClickListener { startActivity(Intent(this, SixActivity::class.java)) }
 
     }
