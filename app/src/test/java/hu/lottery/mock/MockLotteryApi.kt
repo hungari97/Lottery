@@ -1,28 +1,24 @@
 package hu.lottery.mock
 
 import android.content.Context
+import android.icu.util.Calendar
 import hu.lottery.database.AppDatabase
-import hu.lottery.database.dao.FiveTicketDao
 import hu.lottery.database.entity.FiveTicketEntity
 import hu.lottery.database.entity.SixTicketEntity
 import hu.lottery.model.FiveTicket
 import hu.lottery.model.SixTicket
 import hu.lottery.network.client.api.LotteryApi
 import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.io.IOException
-import java.util.*
 
 class MockLotteryApi (private val context: Context): LotteryApi {
 
 
     override fun getLastFive(token: String?): Call<List<FiveTicket?>?>? {
-        var temp=AppDatabase.getInstance(context).fiveTicketDao().getAllFiveTicket()
+        var temp= AppDatabase.getInstance(context).fiveTicketDao().getAllFiveTicket()
         var list=ArrayList<FiveTicket>()
 
         for( tick : FiveTicketEntity in temp){
-            if(tick.week==Calendar.WEEK_OF_YEAR-1){
+            if(tick.week== Calendar.WEEK_OF_YEAR-1){
 
                 list.add(FiveTicket(
                     numbers = listOf(tick.first,tick.second,tick.third,tick.fourth,tick.fifth),

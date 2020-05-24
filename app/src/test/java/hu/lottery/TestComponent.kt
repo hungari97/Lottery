@@ -1,5 +1,7 @@
 package hu.lottery
 
+import android.content.Context
+import dagger.BindsInstance
 import dagger.Component
 import hu.lottery.mock.MockNetworkModule
 import hu.lottery.model.interactor.InteractorModule
@@ -14,5 +16,12 @@ interface TestComponent : LotteryApplicationComponent {
     fun inject(fiveLastTest: FiveLastTest)
     fun inject(sixLastTest: SixLastTest)
     fun inject(weeklyTest: WeeklyTest)
+
+   /* @Component.Builder
+    interface Builder{
+        @BindsInstance
+        fun application(context: Context): Builder
+        fun build(): TestComponent
+    }*/
 
 }

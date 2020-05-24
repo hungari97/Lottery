@@ -1,17 +1,15 @@
 package hu.lottery.test
 
-import hu.lottery.LotteryApplication
-import hu.lottery.database.AppDatabase
 import hu.lottery.presenter.SixPresenter
 import hu.lottery.screen.SixScreen
 import hu.lottery.testInjector
 import org.junit.After
+import org.junit.Assert.assertNotEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito
 import org.robolectric.RobolectricTestRunner
-import org.robolectric.RuntimeEnvironment
 import javax.inject.Inject
 import kotlin.random.Random
 
@@ -37,13 +35,10 @@ class SixTest {
         var original= sixPresenter.getSize()
         val randomValues=List(6) { Random.nextInt(1, 45) }
 
-        val list=ArrayList<Int>()
-        list.addAll(randomValues)
-
-        sixPresenter.addNewTicket(list)
+        sixPresenter.addNewTicket(randomValues)
         var new= sixPresenter.getSize()
 
-        assert(original!=new)
+        assertNotEquals(original, new)
 
     }
 

@@ -2,9 +2,6 @@ package hu.lottery.mock
 
 import hu.lottery.network.client.api.TokenApi
 import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.io.IOException
 import kotlin.random.Random
 
 class MockTokenApi : TokenApi {

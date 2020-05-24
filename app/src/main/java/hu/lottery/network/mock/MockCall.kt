@@ -1,5 +1,6 @@
 package hu.lottery.mock
 
+import okhttp3.Request
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,5 +29,9 @@ class MockCall<T>(val data:T) : Call<T> {
 
     override fun clone(): Call<T> {
         return this
+    }
+
+    override fun request(): Request {
+        TODO("Not yet implemented")
     }
 }

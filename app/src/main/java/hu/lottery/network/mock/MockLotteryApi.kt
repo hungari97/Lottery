@@ -80,7 +80,7 @@ class MockLotteryApi(private val context: Context) : LotteryApi {
             week = body.week!!
         )
         Thread{
-        var temp = database.sixTicketDao().insertSixTicket(entity)
+        database.sixTicketDao().insertSixTicket(entity)
         }.start()
 
 

@@ -10,18 +10,22 @@ import hu.lottery.database.entity.FiveTicketEntity
 import hu.lottery.database.entity.SixTicketEntity
 
 @Database(entities = [FiveTicketEntity::class, SixTicketEntity::class], version = 3)
-abstract class AppDatabase: RoomDatabase() {
+abstract class AppDatabase : RoomDatabase() {
     abstract fun fiveTicketDao(): FiveTicketDao
     abstract fun sixTicketDao(): SixTicketDao
+
     companion object {
         private var INSTANCE: AppDatabase? = null
         fun getInstance(context: Context): AppDatabase {
             if (INSTANCE == null) {
-                INSTANCE = Room.databaseBuilder(context.applicationContext,
-                    AppDatabase::class.java, "lottery.db").build()
+                INSTANCE = Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java, "lottery.db"
+                ).build()
             }
             return INSTANCE!!
         }
+
         fun destroyInstance() {
             INSTANCE = null
         }

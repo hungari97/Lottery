@@ -6,8 +6,8 @@ import dagger.Provides
 import hu.lottery.model.interactor.DatabaseInteractor
 import hu.lottery.model.interactor.WinnerNumberInteractor
 import hu.lottery.presenter.*
-import hu.lottery.view.UIModule
 import javax.inject.Singleton
+
 
 @Module
 class TestModule(private val context: Context){

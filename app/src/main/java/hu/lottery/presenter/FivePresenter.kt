@@ -24,6 +24,6 @@ class FivePresenter @Inject constructor(private val databaseInteractor: Database
 
     }
 
-    fun getSize():Int{return databaseInteractor.listFiveTickets().size}
+    fun getSize():List<FiveTicket>{return databaseInteractor.listFiveTickets().toList()}
 
 }

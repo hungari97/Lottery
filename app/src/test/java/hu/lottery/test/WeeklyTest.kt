@@ -1,6 +1,5 @@
 package hu.lottery.test
 
-
 import hu.lottery.presenter.WeeklyPresenter
 import hu.lottery.screen.WeeklyScreen
 import hu.lottery.testInjector
@@ -11,7 +10,6 @@ import org.junit.runner.RunWith
 import org.mockito.Mockito
 import org.robolectric.RobolectricTestRunner
 import javax.inject.Inject
-
 
 @RunWith(RobolectricTestRunner::class)
 class WeeklyTest {

@@ -1,14 +1,10 @@
 package hu.lottery.mock
 
-import android.content.Context
+
 import hu.lottery.model.FiveTicket
 import hu.lottery.model.SixTicket
 import hu.lottery.network.client.api.WinnerApi
 import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.io.IOException
-
 
 class MockWinnerApi : WinnerApi {
     override val winnerFive: Call<FiveTicket>

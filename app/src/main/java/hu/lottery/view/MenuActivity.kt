@@ -2,6 +2,7 @@ package hu.lottery.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import hu.lottery.R
 import hu.lottery.injector
@@ -16,7 +17,7 @@ class MenuActivity : AppCompatActivity(), MenuScreen {
         super.onCreate(savedInstanceState)
         injector.inject(this)
         setContentView(R.layout.activity_menu)
-        menuPresenter.initialisation(applicationContext)
+
 
         btFiveLottery.setOnClickListener { startActivity(Intent(this, FiveActivity::class.java)) }
 
@@ -25,6 +26,17 @@ class MenuActivity : AppCompatActivity(), MenuScreen {
         btWeeklyTickets.setOnClickListener { startActivity(Intent(this,WeeklyNumberActivity::class.java)) }
         /*ivFive.bringToFront()
         ivSix.bringToFront()*/
+        //val crashButton = Button(this)
+
+
+        btCrash.text = "Crash!"
+        btCrash.setOnClickListener {
+            throw RuntimeException("Test Crash") // Force a crash
+        }
+
+/*        addContentView(btCrash, ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT))*/
     }
 
     @Inject

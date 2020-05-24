@@ -30,5 +30,5 @@ class MockNetworkModule {
 
     @Provides
     @Singleton
-    fun provideTokenApi(client: OkHttpClient): TokenApi = MockTokenApi()
+    fun provideTokenApi(): TokenApi = MockTokenApi()
 }

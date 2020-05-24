@@ -1,11 +1,9 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
-
 apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     compileSdkVersion 29
@@ -27,8 +25,21 @@ android {
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
     }
+
     lintOptions {
         warning 'InvalidPackage'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/java'
+        androidTest.java.srcDirs += 'src/androidTest/java'
+        test.java.srcDirs += 'src/test/java'
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
     }
 }
 
@@ -38,10 +49,12 @@ configurations {
     }
 }
 
+
+
 ext {
     okhttp_version = "3.0.1"
     oltu_version = "1.0.0"
-    retrofit_version = "2.0.0-beta3"
+    retrofit_version = "2.1.0"
     gson_version = "2.4"
     swagger_annotations_version = "1.5.0"
     junit_version = "4.12"
@@ -78,12 +91,19 @@ dependencies {
     kapt 'com.google.dagger:dagger-android-processor:2.15'
     kapt 'com.google.dagger:dagger-compiler:2.15'
 
+    testImplementation 'com.google.dagger:dagger:2.15'
+    testAnnotationProcessor 'com.google.dagger:dagger-compiler:2.15'
+    testImplementation 'com.google.dagger:dagger-android-support:2.15' // if you use the support libraries
+    testImplementation 'com.google.dagger:dagger-android:2.15'
+    testAnnotationProcessor 'com.google.dagger:dagger-android-processor:2.15'
+    kaptTest 'com.google.dagger:dagger-android-processor:2.15'
+    kaptTest 'com.google.dagger:dagger-compiler:2.15'
+
     implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-
 
     implementation "com.google.code.gson:gson:$gson_version"
     implementation "io.swagger:swagger-annotations:$swagger_annotations_version"
@@ -94,7 +114,8 @@ dependencies {
 
 
     testImplementation 'org.robolectric:robolectric:4.3'
-    testImplementation 'org.mockito:mockito-core:1.10.19'
+    testImplementation 'org.mockito:mockito-core:2.23.0'
 
-    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    implementation 'com.google.firebase:firebase-analytics:17.4.2'
+    implementation 'com.google.firebase:firebase-crashlytics:17.0.0'
 }

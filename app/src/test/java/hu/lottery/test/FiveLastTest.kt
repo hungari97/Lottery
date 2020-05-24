@@ -1,11 +1,11 @@
 package hu.lottery.test
 
-
 import hu.lottery.model.FiveTicket
 import hu.lottery.presenter.FiveScorePresenter
 import hu.lottery.screen.FiveScoreScreen
 import hu.lottery.testInjector
 import org.junit.After
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -32,14 +32,14 @@ class FiveLastTest {
 
     @Test
     fun testScore() {
-        assert(fiveScorePresenter.getWinnerFive().numbers.equals(listOf(6, 11, 23, 42, 69)))
+        assertEquals(fiveScorePresenter.getWinnerFive().numbers,(listOf(6, 11, 23, 42, 69)))
     }
 
     @Test
     fun testTicket(){
         for(tick: FiveTicket in fiveScorePresenter.listFive()){
             if (equals(listOf(5,23,27,48,57)))
-                assert(tick.equals(listOf(5,23,27,48,57)))
+                assertEquals(tick,(listOf(5,23,27,48,57)))
         }
     }
 

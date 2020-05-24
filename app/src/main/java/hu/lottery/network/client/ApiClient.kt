@@ -13,8 +13,8 @@ import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import org.apache.oltu.oauth2.client.request.OAuthClientRequest
 import retrofit2.Converter
-import retrofit2.GsonConverterFactory
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 import java.lang.reflect.Type
 import java.util.*
@@ -293,13 +293,13 @@ internal class GsonCustomConverterFactory private constructor(gson: Gson?) :
         ) else gsonConverterFactory.responseBodyConverter(type, annotations, retrofit)
     }
 
-    override fun requestBodyConverter(
+   /* override fun requestBodyConverter(
         type: Type,
         annotations: Array<Annotation>,
         retrofit: Retrofit
     ): Converter<*, RequestBody> {
         return gsonConverterFactory.requestBodyConverter(type, annotations, retrofit)
-    }
+    }*/
 
     companion object {
         fun create(gson: Gson?): GsonCustomConverterFactory {

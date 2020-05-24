@@ -5,12 +5,14 @@ import hu.lottery.presenter.SixScorePresenter
 import hu.lottery.screen.SixScoreScreen
 import hu.lottery.testInjector
 import org.junit.After
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito
 import org.robolectric.RobolectricTestRunner
 import javax.inject.Inject
+
 
 @RunWith(RobolectricTestRunner::class)
 class SixLastTest {
@@ -29,14 +31,14 @@ class SixLastTest {
 
     @Test
     fun testWinner() {
-        assert(sixScorePresenter.getWinnerSix().numbers.equals(listOf(9, 19, 20, 29, 42, 45)))
+        assertEquals(sixScorePresenter.getWinnerSix().numbers,(listOf(9, 19, 20, 29, 42, 45)))
     }
 
     @Test
     fun testTicket(){
         for(tick: SixTicket in sixScorePresenter.listSix()){
             if (equals(listOf(5,23,27,36,40,43)))
-                assert(tick.equals(listOf(5,23,27,36,40,43)))
+                assertEquals(tick,(listOf(5,23,27,36,40,43)))
         }
     }
 

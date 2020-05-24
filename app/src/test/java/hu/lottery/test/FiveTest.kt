@@ -1,17 +1,15 @@
 package hu.lottery.test
 
-import hu.lottery.LotteryApplication
-import hu.lottery.database.AppDatabase
 import hu.lottery.presenter.FivePresenter
 import hu.lottery.screen.FiveScreen
 import hu.lottery.testInjector
 import org.junit.After
+import org.junit.Assert.assertNotEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito
 import org.robolectric.RobolectricTestRunner
-import org.robolectric.RuntimeEnvironment
 import javax.inject.Inject
 import kotlin.random.Random
 
@@ -45,7 +43,7 @@ class FiveTest {
         fivePresenter.addNewTicket(list)
         var new=fivePresenter.getSize()
 
-        assert(original!=new)
+        assertNotEquals(original,new)
 
     }
 

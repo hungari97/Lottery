@@ -50,8 +50,8 @@ class OAuthOkHttpClient : HttpClient {
         return try {
             val response = client.newCall(requestBuilder.build()).execute()
             OAuthClientResponseFactory.createCustomResponse(
-                response.body().string(),
-                response.body().contentType().toString(),
+                response.body()?.string(),
+                response.body()?.contentType().toString(),
                 response.code(),
                 responseClass
             )

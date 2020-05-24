@@ -1,5 +1,6 @@
 package hu.lottery.mock
 
+import okhttp3.Request
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,5 +30,9 @@ class CallVoid : Call<Void> {
 
     override fun clone(): Call<Void> {
         return this
+    }
+
+    override fun request(): Request {
+        TODO("Not yet implemented")
     }
 }
