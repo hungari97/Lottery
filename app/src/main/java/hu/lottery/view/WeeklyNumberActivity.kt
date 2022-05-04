@@ -1,6 +1,5 @@
 package hu.lottery.view
 
-import android.content.AbstractThreadedSyncAdapter
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -10,9 +9,7 @@ import hu.lottery.presenter.WeeklyPresenter
 import hu.lottery.screen.WeeklyScreen
 import hu.lottery.view.adapter.FiveAdapter
 import hu.lottery.view.adapter.SixAdapter
-import kotlinx.android.synthetic.main.activity_five_score.*
 import kotlinx.android.synthetic.main.activity_weekly_number.*
-import java.util.*
 import javax.inject.Inject
 
 class WeeklyNumberActivity : AppCompatActivity(),WeeklyScreen {
